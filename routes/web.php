@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\DB;
 use App\Models\Post;
+use App\Http\Controllers\BlogController;
 
 /*
 |--------------------------------------------------------------------------
@@ -45,4 +46,10 @@ Route::get('post', function () {
 Route::get('post', function () {
     $post = Post::find(58);
     return $post->Body;
+});
+
+Route::get('post', [BlogController::class, 'index']);
+
+Route::get('Blog/create', function () {
+    return view('Blog/create');
 });
