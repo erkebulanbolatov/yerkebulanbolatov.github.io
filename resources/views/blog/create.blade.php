@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Blog</title>
+	<title>Create</title>
 	<style type="text/css">
 		form {
 			margin-top: 50px;
@@ -75,16 +75,20 @@
 	</style>
 </head>
 <body>
-	<form method="POST">
+	<form method="POST" action="{{ route('add-blog') }}">
+		@csrf
    		<div class="group">      
-	    	<input type="text" required>
+	    	<input type="text" name="Title" required>
 	    	<span class="bar"></span>
 	    	<label>Title</label>
    		</div>
 	   	<div class="group">      
-	    	<input type="text" required>
+	    	<input type="text" name="Body" required>
 	    	<span class="bar"></span>
 	    	<label>Body</label>
+	   	</div>
+	   	<div class='group'>
+	   		<button type="submit">Create</button>
 	   	</div>
 	</form>
 </body>

@@ -4,6 +4,6 @@
 	<title>Blog</title>
 </head>
 <body>
-	{{ $clients }}
+	{{ $posts }}
 </body>
 </html>
