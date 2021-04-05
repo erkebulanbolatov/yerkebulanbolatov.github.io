@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\DB;
 use App\Models\Post;
 use App\Http\Controllers\BlogController;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -57,3 +58,10 @@ Route::get('blog/create', function () {
 Route::post('blog/create', [BlogController::class, 'store'])->name('add-blog');
 
 Route::get('post/{id}', [BlogController::class, 'get_post']);
+
+
+Route::get('/user', 'App\Http\Controllers\UserController@mail_send');
+
+Route::post('/addphoto', 'App\Http\Controllers\UserController@store')->name('addphoto');
+
+Route::get('meil/send', 'App\Http\Controllers\MailController@send');
